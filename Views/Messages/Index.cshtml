@@ -1,0 +1,34 @@
+﻿@model Social.ViewModels.IndexViewModel
+
+@{
+    ViewData["Title"] = "Messages";
+}
+
+<h1>Inbox</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Sender's Email
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var sender in Model.senderEmails)
+        {
+            <tr>
+                <td>
+                    <a asp-action="MessageList" asp-route-sender="@sender">@Html.Raw(sender)</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<div class="align-bottom">
+    <h7>Number of messages read: @Model.nrMessagesRead</h7><br />
+    <h7>Number of deleted messages: @Model.nrDeletedMessages</h7>
+</div>

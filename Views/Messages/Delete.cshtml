@@ -1,0 +1,45 @@
+﻿@model Social.ViewModels.DeleteViewModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Message</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            Title
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.title)
+        </dd>
+        <dt class="col-sm-2">
+            Content
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.content)
+        </dd>
+        <dt class="col-sm-2">
+            Time Received
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.timeSent)
+        </dd>
+        <dt class="col-sm-2">
+            Sender
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.senderEmail)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="messageId" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="MessageList" asp-route-sender="@Model.senderEmail">Back to List</a>
+    </form>
+</div>

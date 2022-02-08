@@ -1,0 +1,48 @@
+﻿@model Social.ViewModels.DetailsViewModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Message</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            Title
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.title)
+        </dd>
+        <dt class="col-sm-2">
+            Content
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.content)
+        </dd>
+        <dt class="col-sm-2">
+            Time Received
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.timeSent)
+        </dd>
+        <dt class="col-sm-2">
+            Sender
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.senderEmail)
+        </dd>
+        <dt class="col-sm-2">
+            Marked as read
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.isRead)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="MessageList" asp-route-sender="@Model.senderEmail">Back to List</a> | 
+    <a asp-action="Delete" asp-route-id="@Model.messageId">Delete Message</a>
+</div>

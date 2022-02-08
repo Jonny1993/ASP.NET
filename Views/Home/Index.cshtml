@@ -1,0 +1,9 @@
+﻿@{ ViewData["Title"] = "Home Page"; }
+@model Social.ViewModels.UserViewModel;
+
+<div class="text-center">
+    <h3 class="display-4">Welcome @Model.name</h3>
+    <h5 >Last logged In @Model.lastLogin</h5>
+    <h7 >Logged in @Model.logInsLast30Days time(s) in the last 30 days</h7>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
